@@ -7,10 +7,10 @@ scrDir=`dirname "$(realpath "$0")"`
 source $scrDir/globalcontrol.sh
 waybar_dir="${confDir}/waybar"
 modules_dir="$waybar_dir/modules"
-conf_ctl="$waybar_dir/config.ctl"
 in_file="$waybar_dir/modules/style.css"
 out_file="$waybar_dir/style.css"
 src_file="${confDir}/hypr/themes/theme.conf"
+conf_ctl="$waybar_dir/config.ctl"
 
 
 # calculate height from control file or monitor res
@@ -23,9 +23,9 @@ if [ -z $b_height ] || [ "$b_height" == "0" ]; then
 fi
 
 
-# calculate values based on height
+# calculate values `based on height
 
-export b_radius=$(( b_height*70/100 ))   # block rad 70% of height (type1)
+export b_radius=$`(( b_height*70/100 ))   # block rad 70% of height (type1)
 export c_radius=$(( b_height*25/100 ))   # block rad 25% of height {type2}
 export t_radius=$(( b_height*25/100 ))   # tooltip rad 25% of height
 export e_margin=$(( b_height*30/100 ))   # block margin 30% of height
@@ -36,14 +36,14 @@ export w_radius=$(( b_height*30/100 ))   # workspace rad 30% of height
 export w_margin=$(( b_height*10/100 ))   # workspace margin 10% of height
 export w_paddin=$(( b_height*10/100 ))   # workspace padding 10% of height
 export w_padact=$(( b_height*40/100 ))   # workspace active padding 40% of height
-export s_fontpx=$(( b_height*34/100 ))   # font size 34% of height
+#export s_fontpx=$(( b_height*34/100 ))   # font size 34% of height
 
 if [ $b_height -lt 30 ] ; then
     export e_paddin=0
 fi
-if [ $s_fontpx -lt 10 ] ; then
-    export s_fontpx=10
-fi
+#if [ $s_fontpx -lt 10 ] ; then
+#    export s_fontpx=10
+#fi
 
 
 # adjust values for vert/horz
@@ -73,7 +73,7 @@ case ${w_position} in
         export x4lc_radius=${c_radius}
         export x1="top"
         export x2="bottom"
-        export x3="left" 
+        export x3="left"
         export x4="right" ;;
     left|right)
         export x1g_margin=0
@@ -98,7 +98,7 @@ case ${w_position} in
         export x4lc_radius=${c_radius}
         export x1="left"
         export x2="right"
-        export x3="top" 
+        export x3="top"
         export x4="bottom" ;;
 esac
 

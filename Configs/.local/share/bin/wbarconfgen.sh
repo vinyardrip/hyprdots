@@ -8,7 +8,13 @@ source "${scrDir}/globalcontrol.sh"
 waybar_dir="${confDir}/waybar"
 modules_dir="$waybar_dir/modules"
 conf_file="$waybar_dir/config.jsonc"
-conf_ctl="$waybar_dir/config.ctl"
+
+#conf_ctl="$waybar_dir/config.ctl"
+conf_ctl="$waybar_dir/black-config.ctl"
+#conf_ctl="$waybar_dir/top-config.ctl"
+#conf_ctl="$waybar_dir/right-config.ctl"
+#conf_ctl="$waybar_dir/bottom-config.ctl"
+#conf_ctl="$waybar_dir/left-config.ctl"
 
 readarray -t read_ctl < $conf_ctl
 num_files="${#read_ctl[@]}"
@@ -72,10 +78,6 @@ grep 'gsettings set org.gnome.desktop.interface icon-theme' "${hydeThemeDir}/hyp
 export i_task=$(( w_height*6/10 ))
 if [ $i_task -lt 16 ] ; then
     export i_task="16"
-fi
-export i_priv=$(( w_height*6/13 ))
-if [ $i_priv -lt 12 ] ; then
-    export i_priv="12"
 fi
 
 envsubst < $modules_dir/header.jsonc > $conf_file

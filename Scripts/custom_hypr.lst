@@ -60,8 +60,13 @@ qt6-wayland                                            # wayland support in qt6
 
 # --------------------------------------------------- // Applications
 firefox                                                # browser
+google-chrome                                          # browser chrome
+brave-bin                                              # browser brave
 kitty                                                  # terminal
+alacritty                                              # terminal alacritty
 dolphin                                                # kde file manager
+nemo                                                   # file manager nemo
+doublecmd-qt6                                          # double panel file manager
 ark                                                    # kde file archiver
 vim                                                    # terminal text editor
 code                                                   # ide text editor
@@ -73,7 +78,7 @@ zsh-theme-powerlevel10k-git|zsh oh-my-zsh-git          # theme for zsh
 eza|fish                                               # file lister for fish
 starship|fish                                          # customizable shell prompt
 fastfetch                                              # system information fetch tool
-pokemon-colorscripts-git|zsh                           # display pokemon sprites
+# pokemon-colorscripts-git|zsh                           # display pokemon sprites
 
 # --------------------------------------------------- // HyDE
 hyde-cli-git                                           # cli tool to manage hyde

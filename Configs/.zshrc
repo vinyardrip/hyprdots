@@ -1,11 +1,11 @@
-# Oh-my-zsh installation path
+# Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
-# Powerlevel10k theme path
+# Path to powerlevel10k theme
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # List of plugins used
-plugins=()
+plugins=( git sudo zsh-256color zsh-autosuggestions zsh-syntax-highlighting )
 source $ZSH/oh-my-zsh.sh
 
 # In case a command is not found, try to find the package that has it
@@ -18,7 +18,7 @@ function command_not_found_handler {
         local pkg
         for entry in "${entries[@]}" ; do
             local fields=( ${(0)entry} )
-            if [[ "$pkg" != "${fields[2]}" ]]; then
+            if [[ "$pkg" != "${fields[2]}" ]] ; then
                 printf "${purple}%s/${bright}%s ${green}%s${reset}\n" "${fields[1]}" "${fields[2]}" "${fields[3]}"
             fi
             printf '    /%s\n' "${fields[4]}"
@@ -28,10 +28,10 @@ function command_not_found_handler {
     return 127
 }
 
-# Detect AUR wrapper
-if pacman -Qi yay &>/dev/null; then
+# Detect the AUR wrapper
+if pacman -Qi yay &>/dev/null ; then
    aurhelper="yay"
-elif pacman -Qi paru &>/dev/null; then
+elif pacman -Qi paru &>/dev/null ; then
    aurhelper="paru"
 fi
 
@@ -41,7 +41,7 @@ function in {
     local -a aur=()
 
     for pkg in "${inPkg[@]}"; do
-        if pacman -Si "${pkg}" &>/dev/null; then
+        if pacman -Si "${pkg}" &>/dev/null ; then
             arch+=("${pkg}")
         else
             aur+=("${pkg}")
@@ -58,21 +58,22 @@ function in {
 }
 
 # Helpful aliases
-alias c='clear' # clear terminal
-alias l='eza -lh --icons=auto' # long list
-alias ls='eza -1 --icons=auto' # short list
+alias  c='clear' # clear terminal
+alias  l='eza -lh  --icons=auto' # long list
+alias ls='eza -1   --icons=auto' # short list
 alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
 alias ld='eza -lhD --icons=auto' # long list dirs
 alias lt='eza --icons=auto --tree' # list folder as tree
+alias in='$aurhelper -S' # install package
 alias un='$aurhelper -Rns' # uninstall package
 alias up='$aurhelper -Syu' # update system/package/aur
 alias pl='$aurhelper -Qs' # list installed package
-alias pa='$aurhelper -Ss' # list available package
+alias pa='$aurhelper -Ss' # list availabe package
 alias pc='$aurhelper -Sc' # remove unused cache
 alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
 alias vc='code' # gui code editor
 
-# Directory navigation shortcuts
+# Handy change dir shortcuts
 alias ..='cd ..'
 alias ...='cd ../..'
 alias .3='cd ../../..'
@@ -80,10 +81,13 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
-alias mkdir='mkdir -p'
+alias mkdir='mkdir -pv'
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
+# reflector with options
+alias refup='sudo reflector -c BY -c RU -c UA -a 5 --verbose --sort rate --save /etc/pacman.d/mirrorlist && echo "mirrors update!"'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Display Pokemon
-pokemon-colorscripts --no-title -r 1,3,6
+#Display Pokemon
+#pokemon-colorscripts --no-title -r 1,3,6

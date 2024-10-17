@@ -12,15 +12,12 @@ maxfreq=$(cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq | sed 's/...
 frequency=$(echo $freqlist | tr ' ' '\n' | awk "{ sum+=\$1 } END {printf \"%.0f/$maxfreq MHz\", sum/NR}")
 
 # CPU temp
-sensorsdata=$(sensors)
-temp=$(awk '/Package id 0/ {print $4}' <<< "$sensorsdata" | awk -F '[+.]' '{print $2}')
+temp=$(sensors | awk '/Package id 0/ {print $4}' | awk -F '[+.]' '{print $2}')
 if [ -z "$temp" ]; then
-    temp=$(awk '/Tctl/ {print $2}' <<< "$sensorsdata" | tr -d '+°C')
+    temp=$(sensors | awk '/Tctl/ {print $2}' | tr -d '+°C')
 fi
 if [ -z "$temp" ]; then
     temp="N/A"
-else
-    temp=`printf "%.0f\n" $temp`
 fi
 
 # map icons

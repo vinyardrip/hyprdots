@@ -8,4 +8,7 @@ Font_Pragmatapro|/usr/share/fonts
 Cursor_BibataIce|/usr/share/icons
 Cursor_CapitaineLight|/usr/share/icons
 Cursor_BibataIce|$HOME/.icons
+Cursor_CapitaineLight|$HOME/.icons
+Icon_FlatRemixBlackDark|$HOME/.icons
+Theme_FlatRemixGTKGreyDark|$HOME/.themes
 Gtk_Wallbash|$HOME/.themes

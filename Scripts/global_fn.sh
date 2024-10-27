@@ -88,8 +88,9 @@ detected_vm() {
     then
         sed -i 140s/^/#' '/ ~/.config/hypr/hyprland.conf;
         rm detected_vm.tmp;
+    fi
 }
-detected_vm;
+#detected_vm;
 
 prompt_timer() {
     set +e

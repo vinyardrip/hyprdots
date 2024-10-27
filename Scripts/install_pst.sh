@@ -78,3 +78,27 @@ if ! pkg_installed flatpak; then
 else
     echo -e "\033[0;33m[SKIP]\033[0m flatpak is already installed..."
 fi
+
+# check virtual machine
+detected_vm() {
+    qemu=`grep -i qemu detected_vm.tmp`;
+    kvm=`grep -i kvm detected_vm.tmp`;
+
+    vm=`sudo dmidecode -s system-manufacturer | tee detected_vm.tmp`;
+
+    if [[ $vm == $qemu || $vm == kvm ]];
+    then
+        sed -i 140s/^/#' '/ ~/.config/hypr/hyprland.conf;
+        rm detected_vm.tmp;
+}
+detected_vm;
+
+# check asus rog
+#sudo dmidecode -s system-product-name
+#if STDOUT = ROG
+#sudo pacman -S power-profiles-daemon asusctl supergfxctl rog-control-center
+#printf " Activating ROG services...\n"
+#sudo systemctl enable supergfxd
+#printf " enabling power-profiles-daemon...\n"
+#sudo systemctl enable power-profiles-daemon
+#fi

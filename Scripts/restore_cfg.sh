@@ -81,3 +81,8 @@ if [ -z "${ThemeOverride}" ]; then
         echo -e 'source = ~/.config/hypr/nvidia.conf # auto sourced vars for nvidia\n' >> "${HOME}/.config/hypr/hyprland.conf"
     fi
 fi
+
+# check virtual machine
+echo "start fn detected_vm";
+detected_vm;
+echo "finish fn detected_vm";

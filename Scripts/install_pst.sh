@@ -60,12 +60,6 @@ fi
 # shell
 "${scrDir}/restore_shl.sh"
 
-
-# check virtual machine
-echo "start fn detected_vm";
-detected_vm;
-echo "finish fn detected_vm";
-
 # flatpak
 if ! pkg_installed flatpak; then
 

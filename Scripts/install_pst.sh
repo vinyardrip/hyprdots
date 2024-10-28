@@ -60,6 +60,22 @@ fi
 # shell
 "${scrDir}/restore_shl.sh"
 
+
+# check virtual machine
+detected_vm() {
+    vm=`sudo dmidecode -s system-manufacturer | tee detected_vm.tmp`;
+
+    qemu=`grep -i qemu detected_vm.tmp`;
+    kvm=`grep -i kvm detected_vm.tmp`;
+
+    if [[ $vm == $qemu || $vm == kvm ]];
+    then
+        sed -i 140s/^/#' '/ ~/.config/hypr/hyprland.conf;
+        rm detected_vm.tmp;
+    fi
+}
+detected_vm;
+
 # flatpak
 if ! pkg_installed flatpak; then
 

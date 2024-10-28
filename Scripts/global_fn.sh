@@ -79,10 +79,10 @@ nvidia_detect() {
 
 # check virtual machine
 detected_vm() {
+    vm=`sudo dmidecode -s system-manufacturer | tee detected_vm.tmp`;
+
     qemu=`grep -i qemu detected_vm.tmp`;
     kvm=`grep -i kvm detected_vm.tmp`;
-
-    vm=`sudo dmidecode -s system-manufacturer | tee detected_vm.tmp`;
 
     if [[ $vm == $qemu || $vm == kvm ]];
     then
@@ -90,7 +90,7 @@ detected_vm() {
         rm detected_vm.tmp;
     fi
 }
-#detected_vm;
+detected_vm;
 
 prompt_timer() {
     set +e

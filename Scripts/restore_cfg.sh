@@ -82,7 +82,3 @@ if [ -z "${ThemeOverride}" ]; then
     fi
 fi
 
-# check virtual machine
-echo "start fn detected_vm";
-detected_vm;
-echo "finish fn detected_vm";

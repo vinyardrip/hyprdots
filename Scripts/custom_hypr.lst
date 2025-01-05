@@ -11,10 +11,14 @@ pamixer                                                # pulseaudio cli mixer
 networkmanager                                         # network manager
 network-manager-applet                                 # network manager system tray utility
 bluez                                                  # bluetooth protocol stack
+btrfs-progs                                            # btrfs utils
+grub-btrfs                                             # btrfs grub
 bluez-utils                                            # bluetooth utility cli
 blueman                                                # bluetooth manager gui
 brightnessctl                                          # screen brightness control
 udiskie                                                # manage removable media
+xdg-user-dirs                                          # user directories
+xorg-xhost                                             # wayland support xorg host(any progs)
 
 # --------------------------------------------------- // Display Manager
 sddm                                                   # display manager for KDE plasma
@@ -35,6 +39,8 @@ hyprpicker                                             # color picker
 slurp                                                  # region select for screenshot/screenshare
 swappy                                                 # screenshot editor
 cliphist                                               # clipboard manager
+wttrbar                                                # weather applet
+noto-fonts-emoji                                       # weather icons
 
 # --------------------------------------------------- // Dependencies
 polkit-gnome                                           # authentication agent
@@ -65,17 +71,36 @@ brave-bin                                              # browser brave
 kitty                                                  # terminal
 alacritty                                              # terminal alacritty
 dolphin                                                # kde file manager
-nemo                                                   # file manager nemo
-doublecmd-qt6                                          # double panel file manager
 ark                                                    # kde file archiver
+nemo                                                   # file manager nemo
+nemo-fileroller                                        # nemo file archiver
+doublecmd-qt6                                          # double panel file manager
 vim                                                    # terminal text editor
-code                                                   # ide text editor
+visual-studio-code-bin                                 # ide text editor
+visual-studio-code-insiders-bin                        # ide text editor insiders
+timeshift                                              # system restore
+timeshift-autosnap                                     # autosnap system restore
+obsidian                                               # notes
+element-desktop                                        # messenger
+figma-linux                                            # interface design tool
+deadbeef                                               # audio player
+mpv                                                    # video player
+stacer-bin                                             # gui optimizer and monitoring
 
 # --------------------------------------------------- // Shell
 eza|zsh                                                # file lister for zsh
 oh-my-zsh-git|zsh                                      # plugin manager for zsh
 zsh-theme-powerlevel10k-git|zsh oh-my-zsh-git          # theme for zsh
-eza|fish                                               # file lister for fish
+powerline-fonts                                        # powerline fonts
+zsh-256color                                           # terminal environment 256 colors 
+zsh-autosuggestions                                    # autosuggestions
+zsh-syntax-highlighting                                # highlighting
+zoxide                                                 # smarter cd command
+tree                                                   # add tree in shell
+gdu                                                    # extended du 
+btop                                                   # extended top
+bat                                                    # cat with highlighting
+asdf-vm                                                # packgage manager for many languages
 starship|fish                                          # customizable shell prompt
 fastfetch                                              # system information fetch tool
 # pokemon-colorscripts-git|zsh                         # display pokemon sprites

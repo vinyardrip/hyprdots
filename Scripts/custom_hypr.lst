@@ -91,6 +91,7 @@ stacer-bin                                             # gui optimizer and monit
 eza|zsh                                                # file lister for zsh
 oh-my-zsh-git|zsh                                      # plugin manager for zsh
 zsh-theme-powerlevel10k-git|zsh oh-my-zsh-git          # theme for zsh
+ttf-hack-nerd                                          # fonts zsh theme icons
 powerline-fonts                                        # powerline fonts
 zsh-256color                                           # terminal environment 256 colors 
 zsh-autosuggestions                                    # autosuggestions

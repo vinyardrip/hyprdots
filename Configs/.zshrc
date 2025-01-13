@@ -5,8 +5,23 @@ ZSH=/usr/share/oh-my-zsh/
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # List of plugins used
-plugins=( git sudo zsh-256color zsh-autosuggestions zsh-syntax-highlighting )
+plugins=(
+    git
+    sudo
+    zsh-256color
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zoxide
+)
 source $ZSH/oh-my-zsh.sh
+source ~.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval '$(zoxide init zsh)'
+
+# asdf
+. /opt/asdf-vm/asdf.sh
+
+# Use powerline
+USE_POWERLINE='true'
 
 # In case a command is not found, try to find the package that has it
 function command_not_found_handler {
@@ -73,6 +88,21 @@ alias pc='$aurhelper -Sc' # remove unused cache
 alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
 alias vc='code' # gui code editor
 
+alias lk='l | less' # list with less
+alias lt='lt | tree -L1'
+alias lt='lt2 | tree -L2'
+alias lt='lt3 | tree -L3'
+alias lt='lt4 | tree -L4'
+alias lt='lt5 | tree -L5'
+
+alias du='gdu'
+alias df='df -H'
+alias cat='bat'
+alias top='htop'
+
+# update grub
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
 # Handy change dir shortcuts
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -91,3 +121,5 @@ alias refup='sudo reflector -c BY -c RU -c UA -a 5 --verbose --sort rate --save 
 
 #Display Pokemon
 #pokemon-colorscripts --no-title -r 1,3,6
+
+PATH=~/.console-ninja/.bin:$PATH

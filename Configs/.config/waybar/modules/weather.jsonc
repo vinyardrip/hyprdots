@@ -2,6 +2,6 @@
 	"format": "{}°",
 	"tooltip": true,
 	"interval": 3600,
-	"exec": "wttrbar --date-format %m/%d --location Gomel",
+	"exec": "wttrbar --date-format %A,%e-%b --observation-time --location Gomel",
 	"return-type": "json"
 },

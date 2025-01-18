@@ -1,7 +1,0 @@
-"custom/weather": {
-    "format": "{}",
-    "tooltip": true,
-    "interval": 30,
-    "exec": "wttr.py",
-    "return-type": "json"
-},

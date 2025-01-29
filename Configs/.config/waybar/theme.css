@@ -1,10 +1,7 @@
-/*@define-color bar-bg rgba(0, 0, 0, 0);*/
 @define-color bar-bg #272a34;
 
-/*@define-color main-bg #476A84;*/
 @define-color main-bg #272a34;
 
-/*@define-color main-fg #D9D9D9;*/
 @define-color main-fg #f9f9f9;
 
 @define-color wb-act-bg #5A7D99;
@@ -13,7 +10,8 @@
 @define-color wb-hvr-bg #7287FD;
 @define-color wb-hvr-fg #EFEFF5;
 
-/* my var */
-@define-color black #23252e;
-@define-color green #2be491;
-@define-color gr #363749;
+@define-color main-color #2be491;
+
+@define-color second-color #363749;
+
+

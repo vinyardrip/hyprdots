@@ -4,6 +4,7 @@
         "format-icons": {
             "activated": "󰥔",
             "deactivated": ""
-        }
+        },
+        "timeout": 1
     },
 

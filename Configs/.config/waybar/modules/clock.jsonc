@@ -1,8 +1,9 @@
     "clock": {
         //"format": "{:%a,%d 󰃭 %b %T}",   +sec, not working update second
         "format": "{:%a,%d 󰃭 %b %R}",
-        "interval": 3600, // not working
-        "rotate": ${r_deg},
+        //"interval": 3600, // not working
+        "interval": 60,
+       "rotate": ${r_deg},
         "format-alt": "{:%I:%M %p}",
         "tooltip-format": "<span>{calendar}</span>",
         "calendar": {

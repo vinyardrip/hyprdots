@@ -1,6 +1,6 @@
 * {
   border: none;
-  border-radius: 0px;
+  border-radius: 0;
   font-family: "JetBrainsMono Nerd Font";
   font-weight: bold;
   font-size: 13px;
@@ -16,75 +16,22 @@ window#waybar {
 tooltip {
   background: @main-bg;
   color: @main-fg;
-  border-radius: 7px;
-  border-width: 0px;
-}
-
-#workspaces button {
-  box-shadow: none;
-  text-shadow: none;
-
-  /*border-radius: 8px;*/
-  margin: 2px 0;
-  padding: 0 2px;
-  color: @main-fg;
-  animation: ws_normal 20s ease-in-out 1;
-}
-
-#workspaces button.active {
-  background: @wb-act-bg;
-  background: @green;
-  background: #ff0000;
-
-  color: @wb-act-fg;
-  color: red;
-  margin-left: 2px;
-  padding-left: 11px;
-  padding-right: 11px;
-  margin-right: 2px;
-  animation: ws_active 20s ease-in-out 1;
-  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-}
-
-#workspaces button:hover {
-  background: @wb-hvr-bg;
-  background: @green;
-  color: @wb-hvr-fg;
-  animation: ws_hover 20s ease-in-out 1;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+  border-radius: 8px;
+  border-width: 0;
 }
 
 #taskbar button {
   box-shadow: none;
   text-shadow: none;
-  padding: 0px;
-  border-radius: 8px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 0px;
-  padding-left: 2px;
-  padding-right: 2px;
-  margin-right: 0px;
-  color: @wb-color;
   animation: tb_normal 20s ease-in-out 1;
 }
 
 #taskbar button.active {
-  background: @wb-act-bg;
-  background: @green;
-  color: @wb-act-color;
-  margin-left: 2px;
-  padding-left: 11px;
-  padding-right: 11px;
-  margin-right: 2px;
   animation: tb_active 20s ease-in-out 1;
   transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #taskbar button:hover {
-  background: @wb-hvr-bg;
-  background: @green;
-  color: @wb-hvr-color;
   animation: tb_hover 20s ease-in-out 1;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
@@ -101,11 +48,11 @@ tooltip {
 #battery,
 #bluetooth,
 #custom-cliphist,
+#idle_inhibitor,
 #clock,
 #custom-cpuinfo,
 #cpu,
 #custom-gpuinfo,
-#idle_inhibitor,
 #custom-keybindhint,
 #language,
 #memory,
@@ -115,6 +62,7 @@ tooltip {
 #custom-power,
 #pulseaudio,
 #custom-spotify,
+#custom-weather,
 #taskbar,
 #custom-theme,
 #tray,
@@ -131,170 +79,99 @@ tooltip {
 #custom-rr_end {
   color: @main-fg;
   background: @main-bg;
-  background: transparent;
-  opacity: 1;
-  margin: 4px 0px 4px 0px;
-  padding-left: 4px;
-  padding-right: 4px;
+  margin: 4px 0;
 }
 
-#workspaces,
-#taskbar {
-  padding: 0px;
-}
-
-#custom-r_end {
-  /*border-radius: 0px 20px 20px 0px;*/
-  margin-right: 8px;
-  padding-right: 0px;
-}
-
-#custom-l_end {
-  /*border-radius: 20px 0px 0px 20px;*/
-  margin-left: 8px;
-  padding-left: 0px;
-}
-
-#custom-sr_end {
-  border-radius: 0px;
-  margin-right: 8px;
-  padding-right: 0px;
-}
-
-#custom-sl_end {
-  border-radius: 0px;
-  margin-left: 8px;
-  padding-left: 0px;
-}
-
+#custom-r_end,
+#custom-sr_end,
 #custom-rr_end {
-  /*border-radius: 0px 7px 7px 0px;*/
-  margin-right: 8px;
-  padding-right: 0px;
+  padding-right: 0
 }
 
+#custom-l_end,
+#custom-sl_end,
 #custom-rl_end {
-  /*border-radius: 7px 0px 0px 7px;*/
-  margin-left: 8px;
-  padding-left: 0px;
+  padding-left: 0;
 }
-
-/* ------------------------- */
 
 window#waybar {
-  background-color: @bg;
-  transition-property: background-color;
+  background: @main-bg;
+  transition-property: background;
   transition-duration: 0.5s;
-  border-radius: 5;
+  margin: 0;
+  padding: 0;
 }
-
-@define-color bg #272a34;
-@define-color fg #f9f9f9;
-@define-color black #23252e;
-@define-color green #2BE491;
-@define-color gr #363749;
 
 #custom-weather {
-  background: @black;
-  color: @fg;
-  padding: 0 30px 0 15px;
-  margin: 4px 0 4px 10px;
-  border-radius: 6 0 0 6;
-}
-/*#custom-cmus {
-	background: @black;
-	color: @green;
-	padding: 0;
-	margin: 4px 0 4px 0;
-	border-radius: 0;
-}*/
-/*#custom-foot {
-	background: @black;
-	color: @fg;
-	padding: 0 5px 0 25px;
-	margin: 4px 0 4px 0;
-}*/
-#custom-nemo {
-  background: @black;
-  color: @fg;
-  padding: 0 5px 0 10px;
-  margin: 4px 0 4px 0;
+  color: @main-fg;
+  border-radius: 0;
 }
 
-#workspaces {
-  background-color: @black;
-  background-color: transparent;
-  margin: 4px 5px 4px 5px;
-  /*border-radius: 6;*/
-}
 #workspaces button {
-  background-color: @black;
-  background-color: transparent;
-  color: @fg;
-  padding: 0 4px;
-  margin: 2px 5px 0 5px;
-  border-bottom: solid 2px #23252e;
+  color: @main-color;
   border-radius: 0;
+  animation: ws_normal 20s ease-in-out 1;
 }
+
 #workspaces button:hover {
-  background-color: @black;
-  background-color: transparent;
-  color: @fg;
-  padding: 0 4px;
-  margin: 2px 5px 0 5px;
-  border-bottom: solid 2px @fg;
-  border-radius: 0;
+  background: transparent;
+  color: @main-color;
+  animation: ws_hover 20s ease-in-out 1;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
+
 #workspaces button.active {
-  background-color: @black;
-  background-color: transparent;
-  color: @green;
-  padding: 0 4px;
-  margin: 2px 5px 0 5px;
-  border-bottom: solid 2px;
-  border-radius: 0;
+  border-bottom: solid 2px @main-color;
+  color: @main-color;
+  animation: ws_active 20s ease-in-out 1;
+  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
+
 #workspaces button.empty {
-  color: @gr;
-  padding: 0 4px;
-  margin: 2px 5px 0 5px;
-  border-bottom: solid 2px #23252e;
-  border-radius: 0;
+  color: @second-color;
+  border-bottom: solid 2px @second-color;
+
+}
+
+#backlight,
+#tray,
+#pulseaudio,
+#language,
+#clock,
+#cpu,
+#memory,
+#custom-weather,
+#idle_inhibitor {
+  padding: 0 8px;
 }
 
 #tray {
-  background: @black;
-  background: transparent;
-  color: @fg;
-  padding: 0 15px 0 15px;
-  margin: 4px 0 4px 0;
-  /*border-radius: 6 0 0 6;*/
+  color: @main-fg;
 }
 #pulseaudio {
-  background: @black;
-  background: transparent;
-  color: @fg;
-  padding: 0 30 0 15px;
-  margin: 4px 0px 4px 0;
+  color: @main-fg;
+  min-width: 40px;
 }
 
 #language {
-  background: @black;
   background: transparent;
-  color: @green;
+  color: @main-color;
+  border-bottom: solid 2px @main-color;
   padding: 0;
-  margin: 4px 0 4px 0;
-  border-bottom: solid 2px @green;
-  border-radius: 0;
+  margin: 8px;
 }
 
 #clock {
-  background: @black;
-  background: transparent;
-  /*color: @fg;*/
-  color: white;
-  padding: 0 8px 0 8px;
-  margin: 4px 0 4px 0;
-  /*border-radius: 0 6 6 0;*/
   font-size: 14px;
+}
+
+#memory,
+#custom-power,
+#custom-cliphist,
+#idle_inhibitor {
+  padding: 0 4px;
+}
+
+#idle_inhibitor {
+  padding-right: 8px; 
 }

@@ -85,7 +85,7 @@ tooltip {
 #custom-r_end,
 #custom-sr_end,
 #custom-rr_end {
-  padding-right: 0
+  padding-right: 0;
 }
 
 #custom-l_end,
@@ -129,8 +129,7 @@ window#waybar {
 
 #workspaces button.empty {
   color: @second-color;
-  border-bottom: solid 2px @second-color;
-
+  border: 1px solid @second-color;
 }
 
 #backlight,
@@ -173,5 +172,5 @@ window#waybar {
 }
 
 #idle_inhibitor {
-  padding-right: 8px; 
+  padding-right: 8px;
 }

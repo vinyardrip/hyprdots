@@ -92,13 +92,15 @@ eza|zsh                                                # file lister for zsh
 oh-my-zsh-git|zsh                                      # plugin manager for zsh
 zsh-theme-powerlevel10k-git|zsh oh-my-zsh-git          # theme for zsh
 ttf-hack-nerd                                          # fonts zsh theme icons
+ttf-iosevka-nerd                                       # iosevka nerd fonts
+ttf-iosevka                                            # iosevka fonts
 powerline-fonts                                        # powerline fonts
-zsh-256color                                           # terminal environment 256 colors 
+zsh-256color                                           # terminal environment 256 colors
 zsh-autosuggestions                                    # autosuggestions
 zsh-syntax-highlighting                                # highlighting
 zoxide                                                 # smarter cd command
 tree                                                   # add tree in shell
-gdu                                                    # extended du 
+gdu                                                    # extended du
 btop                                                   # extended top
 bat                                                    # cat with highlighting
 asdf-vm                                                # packgage manager for many languages

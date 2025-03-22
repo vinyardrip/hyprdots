@@ -7,12 +7,12 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # List of plugins used
 plugins=(
 	git
-	gulp 
-	sudo 
-	zsh-256color 
-	zsh-autosuggestions 
+	gulp
+	sudo
+	zsh-256color
+	zsh-autosuggestions
 	zsh-syntax-highlighting
-	zoxide 
+	zoxide
 )
 source $ZSH/oh-my-zsh.sh
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -171,9 +171,9 @@ add_domain() {
 	cd $devilbox_domain_path
 	if ! [[ -d $1 ]] ; then
 		mkdir $1;
-		sudo sh -c  "echo '127.0.0.1  $1' >> /etc/hosts";
-		cd $1; 
-	else 
+		sudo sh -c  "echo '127.0.0.1  $1.loc' >> /etc/hosts";
+		cd $1;
+	else
 		echo "Папка уже существует";
 		cd ~;
 	fi

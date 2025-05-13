@@ -215,6 +215,7 @@ wp_start() {
     code $devilbox_path/data/'wp-'$1;
 }
 
+# yt-dlp (audio)
 yt_mp3() {
 	cd ~/Downloads;
 	mkdir $1;
@@ -222,6 +223,10 @@ yt_mp3() {
 	yt-dlp -f ba -x --audio-quality 0 --audio-format mp3 --split-chapters $2;
 	echo '--- Done! ---';
 }
+# yt-dlp (video)
+alias yt_mp4='yt-dlp --format-sort codec:h264:mp4a'
+alias yt_mkv='yt-dlp -f "bestvideo[ext=mkv]+bestaudio[ext=mka]/best[ext=mkv]/best"'
+alias yt_best_video='yt-dlp -f "bv*+ba"'
 
 # -a == &&
 # -o == ||
